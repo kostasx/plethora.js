@@ -1,5 +1,6 @@
 (function(){
 
+	"use strict";
 	var $_ = {};
 	var version = '1.0.0';
 
