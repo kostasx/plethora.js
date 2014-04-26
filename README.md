@@ -10,19 +10,21 @@ ______
 <script src="plethora.js"></script>
 ```
 
-### Iterate over an object's properties
+### .iterate( object, callback [,own] )
+
+*Object Iterator Function*
 
 ```js
 var object = { a:1, b:2 }
 var x = Object.create( object );
     x.c = 3;
-	  x.d = { e:05, f:06 };
+    x.d = { e:5, f:6 };
 
 // Iterate over object's own properties
-$_.iterate( x, check );
+$p.iterate( x, check );
 
 // Iterate over all propeties, including inherited ones.
-$_.iterate( x, check, false );
+$p.iterate( x, check, false );
 
 // Callback function
 function check(key, value){
