@@ -29,7 +29,6 @@
 
 				}
 
-
 			} else {
 
 				callback( key, object[key] );
