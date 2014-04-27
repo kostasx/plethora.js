@@ -2,6 +2,8 @@ plethora.js
 ===========
 
 JavaScript Utilities Library
+
+Version: 0.1.0 (beta)
 ______
 
 ## Usage:
@@ -10,7 +12,7 @@ ______
 <script src="plethora.js"></script>
 ```
 
-### .iterate( object, callback [,own] )
+### .forEach( object, callback [,own] )
 
 *Object Iterator Function*
 
@@ -21,10 +23,10 @@ var x = Object.create( object );
     x.d = { e:5, f:6 };
 
 // Iterate over object's own properties
-$p.iterate( x, check );
+$p.forEach( x, check );
 
 // Iterate over all propeties, including inherited ones.
-$p.iterate( x, check, false );
+$p.forEach( x, check, false );
 
 // Callback function
 function check(key, value){
