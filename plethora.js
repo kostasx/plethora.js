@@ -1,16 +1,17 @@
 (function(){
 
 	"use strict";
-	var plethora = $p = {};
-	var version = '1.0.0';
 
-	var $p = function( object ) {
-		if ( object instanceof $p) return object;
-		if ( !( this instanceof $p ) ) return new $p( object );
+	var version = '0.1.0';
+	var plethora;
+
+	plethora = function( object ) {
+		if ( object instanceof plethora) return object;
+		if ( !( this instanceof plethora ) ) return new plethora( object );
 		this.$p_object = object;
 	};
 
-	$p.iterate = $p.itr = function ( object, callback, own ){
+	plethora.forEach = plethora.fe = function forEachCb( object, callback, own ){
 
 		if ( !callback ) throw new Error("You must provide a callback function.");
 		own = ( own !== false );
@@ -23,7 +24,7 @@
 				if ( hasOwnProp.call(object, key) ){
 					if ( 'object' === typeof object[key] ){
 						if ( ! object[key] instanceof Array ){
-							_object[key] = $p.iterate( object[key], callback, own );
+							_object[key] = plethora.forEach( object[key], callback, own );
 							continue;
 						} else {
 							_object[key] = object[key];
@@ -41,6 +42,6 @@
 		}
 		return _object;
 	}
-	this.$p = $p;
+	this.plethora = this.$p = plethora;
 
 }).call( this );
